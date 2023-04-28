@@ -6,16 +6,20 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
+
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 
-@Autonomous(name="Camera_Test")
+@Autonomous(name="Network_Runner")
+//@Disabled
 
 public class Network_Runner extends LinearOpMode{
 
     @Override
     public void runOpMode() throws InterruptedException{
 
+        waitForStart();
 
         try{
             File myObj = new File("Json_Reading.json");
@@ -225,11 +229,12 @@ public class Network_Runner extends LinearOpMode{
 
 
 
+            telemetry.addData("Y value",Camera_Test.circle());
+            telemetry.update();
 
+            sleep(10000);
 
-
-
-            Network_Transition.predict(weights, biases, x);
+            //Network_Transition.predict(weights, biases, x);
 
 
         }
