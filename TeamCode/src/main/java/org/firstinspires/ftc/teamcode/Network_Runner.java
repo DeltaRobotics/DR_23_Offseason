@@ -229,11 +229,13 @@ public class Network_Runner extends LinearOpMode{
 
 
 
-            telemetry.addData("Y value",Camera_Test.circle());
-            telemetry.update();
-
+            //telemetry.addData("Y value",Camera_Test.circle());
+            //telemetry.update();
+            System.out.println();
             sleep(10000);
 
+            telemetry.addData("output",Network_Transition.predict(weights, biases, x));
+            telemetry.update();
             //Network_Transition.predict(weights, biases, x);
 
 

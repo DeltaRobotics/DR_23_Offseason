@@ -8,7 +8,7 @@ import java.io.*;
 
 public class Network_Transition {
 
-    public static void predict(double weights[][][], double biases[][][], double x[][]){
+    public static int[] predict(double weights[][][], double biases[][][], double x[][]){
 
 
 
@@ -19,9 +19,9 @@ public class Network_Transition {
         }
 
 
-        for (int i = 0; i < a.length; i++){
-            System.out.println(a[i][0]);
-        }
+        //for (int i = 0; i < a.length; i++){
+        //    System.out.println(a[i][0]);
+        //}
 
 
         int[] prediction = new int[a.length];
@@ -34,9 +34,10 @@ public class Network_Transition {
             else{
                 prediction[i] = 0;
             }
-            System.out.println(prediction[i]);
+            //System.out.println(prediction[i]);
         }
 
+        return prediction;
 
     }
 
